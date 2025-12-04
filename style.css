@@ -21,8 +21,8 @@ background:url('background2.jpg') no-repeat center center fixed;
 background-size: cover;
 	/* Didnt like this change - position: fixed; */
     color: white;
-    text-align: left
-    padding 40px 20px;
+    text-align: left;
+    padding: 40px 20px;
     margin-bottom: 40px;
 	border-radius: 10px;
 	display: flex;
@@ -62,8 +62,8 @@ background-size: cover;
  }
  
  section {
-	 width: 80% /*sets size of section compared to window size*/
-	 max-width 900px;
+	 width: 80%; /*sets size of section compared to window size*/
+	 max-width: 900px;
 	 margin: 0 auto 50px auto;
  }
 
@@ -86,8 +86,8 @@ background-size: cover;
     max-height: 2000px;      /* Large enough to fit content */
 }
 .tab-button{
-background: #0a61c9
-border none;
+background: #0a61c9;
+border: none;
 color: rgb(39, 38, 38);
 padding: 15px 30px;
 cursor: pointer;
@@ -98,9 +98,9 @@ margin: 0 10px;
 transition: all 0.3s ease;
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.952);
 }
- .tab-button:hover {
-	 background: #0c78e8;
-	 transform: traslateY(-2px);
+	.tab-button:hover {
+		background: #0c78e8;
+		/*	 transform: traslateY(-2px); */
 
  }
 
@@ -165,67 +165,72 @@ padding: 10px 0 0 0;
 
  /*PROJECTS SECTION*/
 
- .project-card{
-	background: rgb(179, 172, 241);
-	 border: 2px solid #0a61c9;
-	 padding: 15px;
-	 text-align: center;
-	 font-weight: bold;
-	 border-left: 6px solid #0a61c9;
-	 border-radius: 8px;
-	 margin-bottom: 20px;
-	 transition: box-shadow 0.3s ease;
-	 overflow:  hidden;
-	 
+		.project-card {
+			background: rgb(179, 172, 241);
+			border: 2px solid #0a61c9;
+			padding: 15px;
+			text-align: center;
+			font-weight: bold;
+			border-left: 6px solid #0a61c9;
+			border-radius: 8px;
+			margin-bottom: 20px;
+			transition: box-shadow 0.3s ease;
+			overflow: hidden;
+			cursor: pointer;
+			width: 100%;
+			min-height: 120px;
+		}
 
- }
- .project-title{
-	 cursor: pointer;
-	 display: flex;
-	 align-items: center;
-	 justify-content: center;
-	 gap: 10px;
-	 font-weight: bold;
-	 font-size: 16px;
+		.project-title {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+			font-weight: bold;
+			font-size: 16px;
+		}
 
- }
- 
- .project-icon {
-	 display: inline-block;
-	 transition: transform 0.3s ease;
-	
- }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 10px;
+}
+		.project-icon {
+			display: inline-block;
+			transition: transform 0.3s ease;
+ 		}
 
- .project-title.open .project-icon {
-	 transform: rotate(45deg);
- }
+		.project-title.open .project-icon {
+			transform: rotate(45deg);
+		}
 
- .project-details {
-	 max-height: 0;
-	 overflow: hidden;
-	 padding: 0;
-	 transition: max-height 0.4s ease; padding: 0.4s ease;
-font-weight: normal;
-font-size: 14px;
-text-align: left;
- }
+		.project-details {
+			max-height: 0;
+			overflow: hidden;
+			padding: 0;
+			transition: max-height 0.4s ease;
+			font-weight: normal;
+			font-size: 14px;
+			text-align: left;
+		}
 
- .project-details.open{
-	 max-height: 500px;
-	 padding: 10px 0 0 0;
- }
- /*CONTACT SECTION*/
- .contact p{
-	 font-size: 18px;
- }
- 
- /*FOOTER SECTION*/
- footer {
-	 text-align: center;
-	 padding: 20px;
-	 background: #0a61c9;
-	 color: white;
- }
+			.project-details.open {
+				max-height: 500px;
+				padding: 10px;
+			}
+		/*CONTACT SECTION*/
+		.contact p {
+			font-size: 18px;
+		}
+		/*FOOTER SECTION*/
+		footer {
+			text-align: center;
+			padding: 20px;
+			background: #0a61c9;
+			color: white;
+		}
 
  
 

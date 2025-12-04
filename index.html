@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header class="HeaderName">
-			<div=class"header-left">
+			<div class="header-left">
 				<!--<button class="tab-button active" onclick="showTab('skills', this)">Skills</button>
                 <button class="tab-button" onclick="showTab('projects', this)">Projects</button>-->
 				</div>
@@ -32,9 +32,30 @@
 
 		<!-- TAB MENU -->
 <section class="tabs">
+	<button class="tab-button" onclick="showTab('weather', this)">Weather Dashboard</button>
     <button class="tab-button active" onclick="showTab('skills', this)">Skills</button>
     <button class="tab-button" onclick="showTab('projects', this)">Projects</button>
 </section>
+
+<section id="weather" class="tab-content">
+	<h2>Weather App</h2>
+
+    <div id="weather container">
+        <p>Enter a City name:</p>
+        <input type"text" id="cityInput" placeholder="e.g Orland" />
+        <button onclick="getWeather()">Get Weather</button>
+
+		<div id="weatherResult" class="weather-result hidden"></div>
+
+
+
+    </div>
+
+
+</section>
+
+
+
 
 <section id="skills" class="tab-content active">
 	<!-- <h2>Azure Skills</h2> -->
@@ -141,6 +162,8 @@
 				</p>
 			</div>
 </div>
+		</div>
+
 
 			</section>
 
@@ -199,5 +222,41 @@ function toggleProject(title) {
     title.classList.toggle('open');           // rotate icon
 }
 </script>
+	<script>
+		function getWeather() {
+			const city = document.getElementById("cityinput").value;
+			if (!city) return;
+
+			//Converts City to Coordinates
+			fetch('https://geocoding-api.open-meteo.com/v1/search?name=${city}')
+				.then(response => response.json())
+				.then(data => {
+					if (!data.results || data.results.length === 0) {
+						document.getElementById("weatherResult").innerHTML = "City not found.";
+						return;
+					}
+
+					const { latitude, longitude, name, country } = data.results[0];
+
+					//Fetch weather using coordinates from API
+
+					fetch('https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true')
+						.then(res => res.json())
+						.then(weather => {
+							const w = weather.current_weather;
+							document.getElementById("weatherResult").classList.remove("hidden");
+							document.getElementById("weatherResult").innerHTML = `
+						<h3>$n{name}, ${country}</h3>
+						<p><strong>Temperature:</strong> ${w.temperature}°C</p>
+						<p><strong>Wind Speed:</strong>${w.windspeed} km/h</p>
+						<p><strong>Conditions:</strong>${w.weathercode}</p>
+
+
+							`;
+						});
+				});
+
+		}
+	</script>
 	</body>
 </html>
