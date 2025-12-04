@@ -19,14 +19,15 @@ body {
  .HeaderName {
 background:url('background2.jpg') no-repeat center center fixed;
 background-size: cover;
+	position: fixed;
     color: white;
     text-align: left
     padding 40px 20px;
     margin-bottom: 40px;
 	border-radius: 10px;
-	display: flex;
+/*	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 20px; */
  }
  .header-left,
  .header-right{
@@ -225,4 +226,5 @@ text-align: left;
 	 background: #0a61c9;
 	 color: white;
  }
+
  
