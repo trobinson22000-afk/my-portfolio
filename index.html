@@ -1,0 +1,203 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Azure Cloud Portfolio</title>
+
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<header class="HeaderName">
+			<div=class"header-left">
+				<!--<button class="tab-button active" onclick="showTab('skills', this)">Skills</button>
+                <button class="tab-button" onclick="showTab('projects', this)">Projects</button>-->
+				</div>
+				<div class="header-right">
+		<h1>Travis Robinson</h1>
+		</div>
+		<div class="header-right">
+			
+		<p class="header-subtitle">Azure Cloud Student</p>
+		</div>
+		</header>
+
+		<section class="about">
+			<h2 style="color:white">About Me</h2>
+			<p style="color:white">
+				I'm an aspiring Azure Cloud Engineer focused on building a Portfolio through Microsoft Azure. I enjoy learning about cloud services
+				and am practicing to figure out how to make cost-efficient applications to help push my Resume to the next level.
+			</p>
+		</section>
+
+		<!-- TAB MENU -->
+<section class="tabs">
+    <button class="tab-button active" onclick="showTab('skills', this)">Skills</button>
+    <button class="tab-button" onclick="showTab('projects', this)">Projects</button>
+</section>
+
+<section id="skills" class="tab-content active">
+	<!-- <h2>Azure Skills</h2> -->
+	<div class="skills-grid">
+		<div class="skill-card">
+			
+			<div class="skill-title" onclick="toggleSkill(this)">
+<span class="skill-icon">+</span> Computer Hardware
+			</div>
+
+			<div class="skill-details">
+				<p>I have experience working with computers of all shapes and sizes, Laptops, game consoles, phones.
+					Ranging from building PCs from scratch to diagnosing malfunctioning components and replacing them. 
+					</p>
+					</div>
+
+			
+			</div>
+		<div class="skill-card">Placeholder 2</div>
+		<div class="skill-card">Placeholder 3</div>
+		<div class="skill-card">Placeholder 4</div>
+		<div class="skill-card">Placeholder 5</div>
+		<div class="skill-card">Placeholder 6</div>
+	</div>
+</section>
+<section id="projects" class="tab-content">
+	<!-- <h2>Current Projects</h2> -->
+	
+	<div class="projects-grid">
+	
+	<div class="project-card">
+		<div class="project-title" onclick="toggleProject(this)">
+		<span class="project-icon">+</span> Static Website on Azure Storage (Complete, But Updating)
+		</div>
+		<div class="project-details">
+		<p>
+			Using Azure Blob Storage, i've created a webpage from scratch starting with no prior knowledge of HTML, CSS, or javascript. 
+			<br>Using The following resources, I was able to understand coding concepts to help build this webpage 
+			<br>Youtube
+			<br>Google
+			<br>CoPilot
+			</p>
+			</div>
+			</div>
+
+			<div class="project-card">
+				<div class="project-title" onclick="toggleProject(this)">
+					<span class="project-icon">+</span>AZ-900 Certification (In Progress)
+			</div>
+			<div class="project-details">
+
+				<p>
+					Studying for the AZ-900 via youtube courses to gain introductory skills in Azure and build my path on the way to Taking the AZ-104 in 2026
+				
+				</p>
+			</div>
+</div>
+<div class="project-card">
+				<div class="project-title" onclick="toggleProject(this)">
+					<span class="project-icon">+</span>AZ-104 Certification (Not Started)
+			</div>
+			<div class="project-details">
+
+				<p>
+					Will Begin Studying once my Azure experience is a little more established. Still in the beginning phases of experimenting with the cloud service
+				
+				</p>
+			</div>
+</div>
+<div class="project-card">
+				<div class="project-title" onclick="toggleProject(this)">
+					<span class="project-icon">+</span>Weather Dashboard (Not Started)
+			</div>
+			<div class="project-details">
+
+				<p>
+					Using Azure Functions, I will create a Weather dashboard
+				
+				</p>
+			</div>
+</div>
+
+<div class="project-card">
+				<div class="project-title" onclick="toggleProject(this)">
+					<span class="project-icon">+</span>Contact Form (Not Started)
+			</div>
+			<div class="project-details">
+
+				<p>
+					Create a serverless contact form  using SendGrid, and store all completed forms Via table storage.
+				
+				</p>
+			</div>
+</div>
+<div class="project-card">
+				<div class="project-title" onclick="toggleProject(this)">
+					<span class="project-icon">+</span>Github (Not Started)
+			</div>
+			<div class="project-details">
+
+				<p>
+					Set up and establish a Github to keep track of all of my updated projects and certifications.
+				
+				</p>
+			</div>
+</div>
+
+			</section>
+
+
+			<section class="contact">
+				<h2 style="color:white">Contact</h2>
+				<p style="color:white">Email me at: <strong>trobinson22000@gmail.com</strong></p>
+</section>
+
+<footer>
+	<p style="color:white">2025 Travis Robinson - Azure Cloud Portfolio</p>
+	</footer>
+
+
+
+	
+	<!--Script to switch between tabs-->
+<script>
+function showTab(tabId, button) {
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Show the selected tab
+    document.getElementById(tabId).classList.add('active');
+
+    // Highlight the clicked button
+    button.classList.add('active');
+}
+
+</script>
+<script>
+function toggleSkill(title) {
+    const details = title.nextElementSibling; // the .skill-details div
+    details.classList.toggle('open');         // expand/collapse content
+    title.classList.toggle('open');           // toggle class for icon rotation
+
+    // Change icon text from + to −
+function toggleSkill(title) {
+    const details = title.nextElementSibling;
+    details.classList.toggle('open');
+    title.classList.toggle('open'); // rotates the icon
+}
+}
+</script>
+<script>
+function toggleProject(title) {
+    const details = title.nextElementSibling; // get the project-details div
+    details.classList.toggle('open');         // show/hide content
+    title.classList.toggle('open');           // rotate icon
+}
+</script>
+	</body>
+</html>
